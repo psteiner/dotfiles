@@ -1,0 +1,7 @@
+[user]
+	name = Philip Steiner
+	email = philip@psteiner.com
+[color]
+	ui = true
+[core]
+	pager = less -eiFRSX
