@@ -77,7 +77,7 @@ Bundle 'gmarik/vundle'
 
 " My Bundles here:
 Bundle 'tpope/vim-rails'
-Bundle 'tpope/vim-fugitive'
+"Bundle 'tpope/vim-fugitive'
 Bundle 'vim-ruby/vim-ruby'
 Bundle 'tpope/vim-rails'
 Bundle 'tpope/vim-bundler' 
@@ -93,7 +93,8 @@ Bundle 'scrooloose/nerdcommenter'
 " snipmate S-TAB conflicts with delimitMate
 "Bundle 'msanders/snipmate.vim'
 Bundle 'TailMinusF'
-Bundle 'mbadran/headlights'
+"needs Vim Python:w
+"Bundle 'mbadran/headlights'
 Bundle 'ervandew/supertab'
 " remap supertab command
 "let g:SuperTabMappingForward = '<c-space>'
