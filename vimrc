@@ -11,8 +11,9 @@ set tabstop=2           " numbers of spaces of tab character
 set expandtab           " expand tabs into spaces
 set smarttab            " smart tabbing for autoindent
 set autoindent          " copy indent level to next line
-set smartindent         " smart autoindent on new line
+"set smartindent         " smart autoindent on new line
 set shiftwidth=2        " numbers of spaces to (auto)indent
+set backspace=2         " compatibility for delimitMate expand CRs
 
 " ### SEARCH
 set hlsearch            " highlight searches
@@ -62,7 +63,8 @@ set pastetoggle=<F2>
 " DelimitMate
 imap <leader>] <Plug>delimitMateS-Tab
 au FileType ruby let b:delimitMate_quotes = "\" ' ` |"
-au FileType ruby let b:delimitMate_expand_space = 1
+let delimitMate_expand_space = 1
+let delimitMate_expand_cr = 1
 
 " .vimrc
 map <leader>v :vsp ~/.vimrc<cr>
@@ -111,8 +113,8 @@ Bundle 'scrooloose/nerdcommenter'
 
 Bundle 'TailMinusF'
 Bundle 'ervandew/supertab'
-Bundle 'delimitMate.vim'
-Bundle 'endwise.vim'
+Bundle 'Raimondi/delimitMate'
+Bundle 'tpope/vim-endwise'
 Bundle 'ragtag.vim'
 Bundle 'mru.vim'
 
