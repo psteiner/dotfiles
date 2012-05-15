@@ -117,6 +117,7 @@ Bundle 'Raimondi/delimitMate'
 Bundle 'tpope/vim-endwise'
 Bundle 'ragtag.vim'
 Bundle 'mru.vim'
+Bundle 'xolox/vim-session'
 
 filetype plugin indent on
 
