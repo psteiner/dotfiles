@@ -60,6 +60,10 @@ hi statusline ctermfg=8 ctermbg=15
 
 set pastetoggle=<F2>
 
+" CloseTag
+au FileType html,eruby,mako let b:closetag_html_style=1
+au FileType html,xhtml,xml,eruby,mako source ~/.vim/bundle/closetag.vim/plugin/closetag.vim
+
 " DelimitMate
 imap <leader>] <Plug>delimitMateS-Tab
 au FileType ruby let b:delimitMate_quotes = "\" ' ` |"
@@ -118,6 +122,10 @@ Bundle 'tpope/vim-endwise'
 Bundle 'ragtag.vim'
 Bundle 'mru.vim'
 Bundle 'xolox/vim-session'
+Bundle 'closetag.vim'
+
+Bundle 'ruby-matchit'
+Bundle 'matchit.zip'
 
 filetype plugin indent on
 
