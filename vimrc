@@ -11,8 +11,9 @@ set tabstop=2           " numbers of spaces of tab character
 set expandtab           " expand tabs into spaces
 set smarttab            " smart tabbing for autoindent
 set autoindent          " copy indent level to next line
-set smartindent         " smart autoindent on new line
+"set smartindent         " smart autoindent on new line
 set shiftwidth=2        " numbers of spaces to (auto)indent
+set backspace=2         " compatibility for delimitMate expand CRs
 
 " ### SEARCH
 set hlsearch            " highlight searches
@@ -57,12 +58,22 @@ hi statusline ctermfg=8 ctermbg=15
 " ### CUSTOM MAPPINGS
 "let mapleader = ","
 
+" toggles 'paste' mode avoids unpleasant effects e.g. control codes
 set pastetoggle=<F2>
+
+" CloseTag
+au FileType html,eruby,mako let b:closetag_html_style=1
+au FileType html,xhtml,xml,eruby,mako source ~/.vim/bundle/closetag.vim/plugin/closetag.vim
 
 " DelimitMate
 imap <leader>] <Plug>delimitMateS-Tab
 au FileType ruby let b:delimitMate_quotes = "\" ' ` |"
-au FileType ruby let b:delimitMate_expand_space = 1
+let delimitMate_expand_space = 1
+let delimitMate_expand_cr = 1
+
+" Surround
+" remap Ctrl-X - to <% \r %> instead of <% \r -%>
+au FileType ruby let b:surround_45 = "<% \r %>"
 
 " .vimrc
 map <leader>v :vsp ~/.vimrc<cr>
@@ -116,10 +127,15 @@ Bundle 'TailMinusF'
 =======
 >>>>>>> 22a83900be3e76db4916311b4b323c284f2e60d7
 Bundle 'ervandew/supertab'
-Bundle 'delimitMate.vim'
-Bundle 'endwise.vim'
+Bundle 'Raimondi/delimitMate'
+Bundle 'tpope/vim-endwise'
 Bundle 'ragtag.vim'
 Bundle 'mru.vim'
+Bundle 'xolox/vim-session'
+Bundle 'closetag.vim'
+
+Bundle 'ruby-matchit'
+Bundle 'matchit.zip'
 
 filetype plugin indent on
 
