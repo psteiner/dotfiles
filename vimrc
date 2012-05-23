@@ -30,10 +30,29 @@ set lbr                 " wrap text
 set ls=2                " always show status line
 set nu                  " turn on line numbering
 "set showmatch           " show matching brackets
+" disable matching paren highlighting
+let g:loaded_matchparen=1
 
 set hidden              " allow unwritten buffer changes on :e
 set history=1000        " remember more commands and history
 set undolevels=1000     " lots of undo
+
+" ### STATUS LINE
+function! InsertStatuslineColor(mode)
+  if a:mode == 'i'
+    hi statusline ctermfg=6 ctermbg=0
+  elseif a:mode == 'r'
+    hi statusline ctermfg=5 ctermbg=0
+  else
+    hi statusline ctermfg=1 ctermbg=0
+  endif
+endfunction
+
+au InsertEnter * call InsertStatuslineColor(v:insertmode)
+au InsertLeave * hi statusline ctermfg=8 ctermbg=15
+
+" default the status line to green when entering VIM
+hi statusline ctermfg=8 ctermbg=15
 
 " ### CUSTOM MAPPINGS
 "let mapleader = ","
@@ -41,8 +60,9 @@ set undolevels=1000     " lots of undo
 set pastetoggle=<F2>
 
 " DelimitMate
-imap <leader>p <Plug>delimitMateS-Tab
+imap <leader>] <Plug>delimitMateS-Tab
 au FileType ruby let b:delimitMate_quotes = "\" ' ` |"
+au FileType ruby let b:delimitMate_expand_space = 1
 
 " .vimrc
 map <leader>v :vsp ~/.vimrc<cr>
@@ -80,27 +100,26 @@ Bundle 'tpope/vim-rails'
 "Bundle 'tpope/vim-fugitive'
 Bundle 'vim-ruby/vim-ruby'
 Bundle 'tpope/vim-rails'
-Bundle 'tpope/vim-bundler' 
-Bundle 'tpope/vim-git'
+"Bundle 'tpope/vim-bundler' 
 Bundle 'tpope/vim-surround'
-" disabled in favour of delimitMate
-"Bundle 'jiangmiao/auto-pairs'
-" remap auto-pairs jump key
-"let g:AutoPairsShortcutJump = '<F4>'
 Bundle 'git://git.wincent.com/command-t.git'
 Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/nerdcommenter'
+
 " snipmate S-TAB conflicts with delimitMate
 "Bundle 'msanders/snipmate.vim'
+
 Bundle 'TailMinusF'
+<<<<<<< HEAD
 "needs Vim Python:w
 "Bundle 'mbadran/headlights'
+=======
+>>>>>>> 22a83900be3e76db4916311b4b323c284f2e60d7
 Bundle 'ervandew/supertab'
-" remap supertab command
-"let g:SuperTabMappingForward = '<c-space>'
-"let g:SuperTabMappingBackward = '<s-c-space>'
 Bundle 'delimitMate.vim'
 Bundle 'endwise.vim'
+Bundle 'ragtag.vim'
+Bundle 'mru.vim'
 
 filetype plugin indent on
 
