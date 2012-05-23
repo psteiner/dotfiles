@@ -58,6 +58,7 @@ hi statusline ctermfg=8 ctermbg=15
 " ### CUSTOM MAPPINGS
 "let mapleader = ","
 
+" toggles 'paste' mode avoids unpleasant effects e.g. control codes
 set pastetoggle=<F2>
 
 " CloseTag
@@ -69,6 +70,10 @@ imap <leader>] <Plug>delimitMateS-Tab
 au FileType ruby let b:delimitMate_quotes = "\" ' ` |"
 let delimitMate_expand_space = 1
 let delimitMate_expand_cr = 1
+
+" Surround
+" remap Ctrl-X - to <% \r %> instead of <% \r -%>
+au FileType ruby let b:surround_45 = "<% \r %>"
 
 " .vimrc
 map <leader>v :vsp ~/.vimrc<cr>
