@@ -121,11 +121,6 @@ Bundle 'scrooloose/nerdcommenter'
 "Bundle 'msanders/snipmate.vim'
 
 Bundle 'TailMinusF'
-<<<<<<< HEAD
-"needs Vim Python:w
-"Bundle 'mbadran/headlights'
-=======
->>>>>>> 22a83900be3e76db4916311b4b323c284f2e60d7
 Bundle 'ervandew/supertab'
 Bundle 'Raimondi/delimitMate'
 Bundle 'tpope/vim-endwise'
