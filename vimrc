@@ -108,17 +108,18 @@ Bundle 'gmarik/vundle'
 
 " My Bundles here:
 Bundle 'tpope/vim-rails'
-"Bundle 'tpope/vim-fugitive'
 Bundle 'vim-ruby/vim-ruby'
 Bundle 'tpope/vim-rails'
-"Bundle 'tpope/vim-bundler' 
 Bundle 'tpope/vim-surround'
 Bundle 'git://git.wincent.com/command-t.git'
 Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/nerdcommenter'
 
-" snipmate S-TAB conflicts with delimitMate
-"Bundle 'msanders/snipmate.vim'
+"Bundle 'MarcWeber/vim-addon-mw-utils'
+"Bundle 'tomtom/tlib_vim'
+"Bundle 'snipmate-snippets'
+"Bundle 'garbas/vim-snipmate'
+"Bundle 'xptemplate'
 
 Bundle 'TailMinusF'
 Bundle 'ervandew/supertab'
@@ -132,5 +133,7 @@ Bundle 'closetag.vim'
 Bundle 'ruby-matchit'
 Bundle 'matchit.zip'
 
+"Load UltiSnips after Supertabs
+Bundle 'UltiSnips'
 filetype plugin indent on
 
