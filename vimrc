@@ -39,21 +39,22 @@ set history=1000        " remember more commands and history
 set undolevels=1000     " lots of undo
 
 " ### STATUS LINE
+" default the status line to green when entering VIM
+hi statusline ctermfg=023 ctermbg=0
+
 function! InsertStatuslineColor(mode)
   if a:mode == 'i'
-    hi statusline ctermfg=6 ctermbg=0
+    hi statusline ctermfg=003 ctermbg=0
   elseif a:mode == 'r'
-    hi statusline ctermfg=5 ctermbg=0
+    hi statusline ctermfg=001 ctermbg=0
   else
-    hi statusline ctermfg=1 ctermbg=0
+    hi statusline ctermfg=004 ctermbg=0
   endif
 endfunction
 
 au InsertEnter * call InsertStatuslineColor(v:insertmode)
-au InsertLeave * hi statusline ctermfg=8 ctermbg=15
+au InsertLeave * hi statusline ctermfg=023 ctermbg=0
 
-" default the status line to green when entering VIM
-hi statusline ctermfg=8 ctermbg=15
 
 " ### CUSTOM MAPPINGS
 "let mapleader = ","
