@@ -57,7 +57,7 @@ au InsertLeave * hi statusline ctermfg=023 ctermbg=0
 
 
 " ### CUSTOM MAPPINGS
-"let mapleader = ","
+let mapleader = ","
 
 " toggles 'paste' mode avoids unpleasant effects e.g. control codes
 set pastetoggle=<F2>
@@ -67,7 +67,7 @@ au FileType html,eruby,mako let b:closetag_html_style=1
 au FileType html,xhtml,xml,eruby,mako source ~/.vim/bundle/closetag.vim/plugin/closetag.vim
 
 " DelimitMate
-imap <leader>] <Plug>delimitMateS-Tab
+imap <leader>m <Plug>delimitMateS-Tab
 au FileType ruby let b:delimitMate_quotes = "\" ' ` |"
 let delimitMate_expand_space = 1
 let delimitMate_expand_cr = 1
@@ -84,6 +84,9 @@ map <leader>u :source ~/.vimrc<cr>
 " Ctrl-N to disable search match highlight
 " Note: Ctrl-N was same as 'k' (move to next line)
 nmap <silent> <C-N> :silent noh<CR>
+
+" UltiSnips
+let g:UltiSnipsSnippetsDir="~/.vim/bundle/UltiSnips/UltiSnips"
 
 
 " set nobackup
@@ -137,4 +140,14 @@ Bundle 'matchit.zip'
 "Load UltiSnips after Supertabs
 Bundle 'UltiSnips'
 filetype plugin indent on
+
+" ### CUSTOM FUNCTIONS
+"
+function! MultiExtensionFiletype()
+  let ft_default=&filetype
+  let ft_prefix=substitute(matchstr(expand('%'),'\..\+\.'),'\.','','g')
+  sil exe "set filetype=" . ft_prefix . "." . ft_default
+endfunction
+
+autocmd BufReadPost *.*.* call MultiExtensionFiletype()
 
