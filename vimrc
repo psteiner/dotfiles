@@ -1,11 +1,5 @@
 set nocompatible    " use vim defaults, must? be first
 
-
-" disabled for Vundle compatibility
-" to indent automatically depending on filetype
-" filetype indent on
-
-
 " ### TABS AND INDENTATION
 set tabstop=2           " numbers of spaces of tab character
 set expandtab           " expand tabs into spaces
@@ -39,9 +33,10 @@ set history=1000        " remember more commands and history
 set undolevels=1000     " lots of undo
 
 " ### STATUS LINE
-" default the status line to green when entering VIM
+" default the status line when entering VIM, doesn't seem to work?
 hi statusline ctermfg=023 ctermbg=0
 
+" set status line colour for insert and replace modes
 function! InsertStatuslineColor(mode)
   if a:mode == 'i'
     hi statusline ctermfg=003 ctermbg=0
@@ -57,7 +52,11 @@ au InsertLeave * hi statusline ctermfg=023 ctermbg=0
 
 
 " ### CUSTOM MAPPINGS
-let mapleader = ","
+let mapleader = ";"
+
+" ;cd to change directory to the dir of the current buffer then display the
+" directory path
+nnoremap <leader>cd :cd %:p:h<CR>:pwd<CR>
 
 " toggles 'paste' mode avoids unpleasant effects e.g. control codes
 set pastetoggle=<F2>
@@ -98,11 +97,6 @@ let g:UltiSnipsSnippetsDir="~/.vim/bundle/UltiSnips/UltiSnips"
 colorscheme vibrantink
 
 " ### PACKAGE BUNDLING
-" using Vundle instead
-" call pathogen#infect() " load pathogen
-
-" Disable Vundle if Bundle* commands
-" conflict with tpope/vim-bundler
 set rtp+=~/.vim/bundle/vundle
 call vundle#rc()
 
@@ -111,34 +105,28 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 
 " My Bundles here:
-Bundle 'tpope/vim-rails'
-Bundle 'vim-ruby/vim-ruby'
-Bundle 'tpope/vim-rails'
-Bundle 'tpope/vim-surround'
-Bundle 'wincent/Command-T'
+Bundle 'closetag.vim'
+Bundle 'ervandew/supertab'
+Bundle 'matchit.zip'
+Bundle 'mru.vim'
+Bundle 'ragtag.vim'
+Bundle 'ruby-matchit'
 Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/nerdcommenter'
-
-"Bundle 'MarcWeber/vim-addon-mw-utils'
-"Bundle 'tomtom/tlib_vim'
-"Bundle 'snipmate-snippets'
-"Bundle 'garbas/vim-snipmate'
-"Bundle 'xptemplate'
-
-Bundle 'TailMinusF'
-Bundle 'ervandew/supertab'
-Bundle 'Raimondi/delimitMate'
 Bundle 'tpope/vim-endwise'
-Bundle 'ragtag.vim'
-Bundle 'mru.vim'
+Bundle 'tpope/vim-rails'
+Bundle 'tpope/vim-surround'
+Bundle 'vim-ruby/vim-ruby'
+Bundle 'wincent/Command-T'
 Bundle 'xolox/vim-session'
-Bundle 'closetag.vim'
 
-Bundle 'ruby-matchit'
-Bundle 'matchit.zip'
+Bundle 'Raimondi/delimitMate'
+Bundle 'TailMinusF'
 
 "Load UltiSnips after Supertabs
 Bundle 'UltiSnips'
+
+" must follow Vundle
 filetype plugin indent on
 
 " ### CUSTOM FUNCTIONS
