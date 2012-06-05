@@ -11,6 +11,7 @@ set backspace=2         " compatibility for delimitMate expand CRs
 
 " ### SEARCH
 set hlsearch            " highlight searches
+hi Search ctermbg=LightBlue
 set incsearch           " search while typing
 set ignorecase          " case insensitive search
 set smartcase           " case insenstive when lowercase, case sensitive otherwise"
@@ -91,11 +92,6 @@ let g:UltiSnipsSnippetsDir="~/.vim/bundle/UltiSnips/UltiSnips"
 " set nobackup
 " set noswapfile
 
-" ### COLORSCHEME
-" colorscheme railscasts
-" colorscheme delek
-colorscheme vibrantink
-
 " ### PACKAGE BUNDLING
 set rtp+=~/.vim/bundle/vundle
 call vundle#rc()
@@ -117,7 +113,7 @@ Bundle 'tpope/vim-endwise'
 Bundle 'tpope/vim-rails'
 Bundle 'tpope/vim-surround'
 Bundle 'vim-ruby/vim-ruby'
-Bundle 'wincent/Command-T'
+Bundle 'wincent/command-t'
 Bundle 'xolox/vim-session'
 
 Bundle 'Raimondi/delimitMate'
@@ -126,8 +122,17 @@ Bundle 'TailMinusF'
 "Load UltiSnips after Supertabs
 Bundle 'UltiSnips'
 
+" ### COLORSCHEM BUNDLES
+Bundle 'Solarized'
+Bundle 'Zenburn'
+
 " must follow Vundle
 filetype plugin indent on
+
+" ### COLORSCHEME - must follow Vundle to use Vundle-installed schemes
+" colorscheme railscasts
+" colorscheme delek
+"colorscheme vibrantink
 
 " ### CUSTOM FUNCTIONS
 "
@@ -137,5 +142,5 @@ function! MultiExtensionFiletype()
   sil exe "set filetype=" . ft_prefix . "." . ft_default
 endfunction
 
-autocmd BufReadPost *.*.* call MultiExtensionFiletype()
+"autocmd BufReadPost *.*.* call MultiExtensionFiletype()
 
