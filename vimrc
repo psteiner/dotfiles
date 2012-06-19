@@ -11,7 +11,7 @@ set backspace=2         " compatibility for delimitMate expand CRs
 
 " ### SEARCH
 set hlsearch            " highlight searches
-hi Search ctermbg=LightYellow
+hi Search ctermbg=lightyellow ctermfg=red term=underline
 set incsearch           " search while typing
 set ignorecase          " case insensitive search
 set smartcase           " case insenstive when lowercase, case sensitive otherwise"
@@ -53,7 +53,7 @@ au InsertLeave * hi statusline ctermfg=023 ctermbg=0
 
 
 " ### CUSTOM MAPPINGS
-let mapleader = ";"
+let mapleader = ","
 
 " ;cd to change directory to the dir of the current buffer then display the
 " directory path
@@ -74,7 +74,7 @@ let delimitMate_expand_cr = 1
 
 " Surround
 " remap Ctrl-X - to <% \r %> instead of <% \r -%>
-au FileType ruby let b:surround_45 = "<% \r %>"
+"au FileType ruby let b:surround_45 = "<% \r %>"
 
 " NERDTree 
 if has("win32") || has("win32unix") || has("win64")
