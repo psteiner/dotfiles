@@ -8,3 +8,5 @@
 [alias]
 	co = checkout
 	ci = commit
+[credential]
+	helper = cache
