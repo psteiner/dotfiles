@@ -5,6 +5,7 @@
 	ui = true
 [core]
 	pager = less -eiFRSX
+	excludesfile = /home/Philip/.gitignore_global
 [alias]
 	co = checkout
 	ci = commit
