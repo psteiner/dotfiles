@@ -9,4 +9,4 @@
 	co = checkout
 	ci = commit
 [credential]
-	helper = cache
+	helper = /c/Users/Philip/AppData/Roaming/GitCredStore/git-credential-winstore
