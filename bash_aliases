@@ -9,3 +9,5 @@ alias ..='cd ..'
 alias ald="echo \"echo 'alias name=\\\"command\\\"' >> ~/.bash_aliases && . ~/.bash_aliases\""
 alias lat="ls -lat"
 
+alias myprocs="ps -ef | grep philip"
+alias myprocs="ps -ef | grep philip"

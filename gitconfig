@@ -5,3 +5,8 @@
 	ui = true
 [core]
 	pager = less -eiFRSX
+[alias]
+	co = checkout
+	ci = commit
+[credential]
+	helper = cache
