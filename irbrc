@@ -1,3 +1,4 @@
+# http://distriwatch.de/2011/05/92/
 require 'irb/completion'
 ARGV.concat [ "--readline", "--prompt-mode", "simple" ]
 
