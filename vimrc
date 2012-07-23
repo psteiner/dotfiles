@@ -9,9 +9,12 @@ set autoindent          " copy indent level to next line
 set shiftwidth=2        " numbers of spaces to (auto)indent
 set backspace=2         " compatibility for delimitMate expand CRs
 
+" ### Set term for arrow key compatibility
+"set term=ansi
+
 " ### SEARCH
 set hlsearch            " highlight searches
-hi Search ctermbg=lightyellow ctermfg=red term=underline
+"hi Search ctermbg=blue ctermfg=red term=underline
 set incsearch           " search while typing
 set ignorecase          " case insensitive search
 set smartcase           " case insenstive when lowercase, case sensitive otherwise"
