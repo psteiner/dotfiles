@@ -11,3 +11,4 @@ alias lat="ls -lat"
 
 alias myprocs="ps -ef | grep philip"
 alias myprocs="ps -ef | grep philip"
+alias gitc="git config -l"

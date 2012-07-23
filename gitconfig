@@ -5,8 +5,9 @@
 	ui = true
 [core]
 	pager = less -eiFRSX
+	excludesfile = /home/Philip/.gitignore_global
 [alias]
 	co = checkout
 	ci = commit
 [credential]
-	helper = cache
+	helper = /c/Users/Philip/AppData/Roaming/GitCredStore/git-credential-winstore

@@ -1,3 +1,4 @@
+# http://distriwatch.de/2011/05/92/
 require 'irb/completion'
 ARGV.concat [ "--readline", "--prompt-mode", "simple" ]
 
@@ -28,3 +29,8 @@ module Readline
 end
 
 Readline::History.start_session_log
+
+require 'irb/ext/save-history'
+IRB.conf[:SAVE_HISTORY] = 100
+IRB.conf[:HISTORY_FILE] = "#{ENV['HOME']}/.irb-save-history"
+IRB.conf[:PROMPT_MODE] = :SIMPLE
