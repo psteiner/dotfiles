@@ -103,6 +103,9 @@ let g:UltiSnipsSnippetsDir="~/.vim/bundle/UltiSnips/UltiSnips"
 " set nobackup
 " set noswapfile
 
+" turn off filetype to allow Vundle filetype detection
+filetype off
+
 " ### PACKAGE BUNDLING
 set rtp+=~/.vim/bundle/vundle
 call vundle#rc()
@@ -129,6 +132,7 @@ Bundle 'xolox/vim-session'
 
 Bundle 'Raimondi/delimitMate'
 Bundle 'TailMinusF'
+Bundle 'Puppet-Syntax-Highlighting'
 
 "Load UltiSnips after Supertabs
 Bundle 'UltiSnips'

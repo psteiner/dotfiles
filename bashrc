@@ -106,3 +106,7 @@ fi
 if [[ -s "$HOME/.rvm/scripts/rvm" ]]; then source "$HOME/.rvm/scripts/rvm" ; fi
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+
+# Add VirtualBox VMs for vagrant
+# PATH=$PATH:$HOME/VirtualBox\ VMs:/c/Program\ Files/Oracle/VirtualBox
+
