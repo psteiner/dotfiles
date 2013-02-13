@@ -133,7 +133,7 @@ Bundle 'xolox/vim-session'
 Bundle 'Raimondi/delimitMate'
 Bundle 'TailMinusF'
 Bundle 'Puppet-Syntax-Highlighting'
-Bundle 'godleygeek/tabular'
+Bundle 'Tabular'
 Bundle 'rodjek/vim-puppet'
 
 "Load UltiSnips after Supertabs
