@@ -10,4 +10,4 @@
 	co = checkout
 	ci = commit
 [credential]
-	helper = /c/Users/Philip/AppData/Roaming/GitCredStore/git-credential-winstore
+	helper = cache --timeout=3600
