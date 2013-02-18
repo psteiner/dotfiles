@@ -11,7 +11,7 @@ dotdir=~/dotfiles                    # dotfiles directory
 olddir=~/oldfiles             # old dotfiles backup directory
 
 # list of files/folders to symlink in homedir
-files="bash_aliases bash_login bash_logout bash_profile bashrc gitconfig inputrc irbrc minttyrc vimrc"    
+files="bash_aliases bash_login bash_logout bash_profile bashrc gemrc gitconfig gitignore_global inputrc irbrc minttyrc vimrc"    
 
 ##########
 
@@ -31,8 +31,8 @@ for file in $files; do
   if [ -e ~/.$file ] && [ ! -h ~/.$file ]; then
     echo "Moving ~/.$file to $olddir"
     mv ~/.$file $olddir/
-    echo "Creating symlink to $file in home directory."
-    ln -s $dotdir/$file ~/.$file
   fi
+  echo "Creating symlink to $file in home directory."
+  ln -s $dotdir/$file ~/.$file
 done
 
