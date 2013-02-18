@@ -127,7 +127,7 @@ Bundle 'tpope/vim-endwise'
 Bundle 'tpope/vim-rails'
 Bundle 'tpope/vim-surround'
 Bundle 'vim-ruby/vim-ruby'
-Bundle 'wincent/command-t'
+Bundle 'git://git.wincent.com/command-t.git'
 Bundle 'xolox/vim-session'
 
 Bundle 'Raimondi/delimitMate'
