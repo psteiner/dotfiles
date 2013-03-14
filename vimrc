@@ -137,7 +137,7 @@ Bundle 'Tabular'
 Bundle 'rodjek/vim-puppet'
 
 "Load UltiSnips after Supertabs
-Bundle 'UltiSnips'
+"Bundle 'SirVer/ultisnips'
 
 " ### COLORSCHEM BUNDLES
 Bundle 'Solarized'
