@@ -8,6 +8,8 @@ set autoindent          " copy indent level to next line
 "set smartindent         " smart autoindent on new line
 set shiftwidth=2        " numbers of spaces to (auto)indent
 set backspace=2         " compatibility for delimitMate expand CRs
+set textwidth=72	" max width of inserted text
+"set encoding=utf-8	" character encoding inside Vim
 
 " ### Set term for arrow key compatibility
 "set term=ansi
@@ -119,7 +121,7 @@ Bundle 'closetag.vim'
 Bundle 'ervandew/supertab'
 Bundle 'matchit.zip'
 Bundle 'mru.vim'
-Bundle 'ragtag.vim'
+Bundle 'tpope/vim-ragtag'
 Bundle 'ruby-matchit'
 Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/nerdcommenter'
@@ -137,7 +139,7 @@ Bundle 'Tabular'
 Bundle 'rodjek/vim-puppet'
 
 "Load UltiSnips after Supertabs
-"Bundle 'SirVer/ultisnips'
+Bundle 'SirVer/ultisnips'
 
 " ### COLORSCHEM BUNDLES
 Bundle 'Solarized'
@@ -158,6 +160,16 @@ function! MultiExtensionFiletype()
   let ft_prefix=substitute(matchstr(expand('%'),'\..\+\.'),'\.','','g')
   sil exe "set filetype=" . ft_prefix . "." . ft_default
 endfunction
+
+" Go to last file(s) if invoked without arguements.
+" Taken from vim.wikia.com/wiki/Open_the_last_edited_file
+"autocmd VimLeave * nested if (!isdirectory($HOME . "/.vim")) |
+      "\ call mkdir($HOME . "/.vim") |
+      "\ endif |
+      "\ execute "mksession! " . $HOME . "/.vim/Session.vim"
+
+"autocmd VimEnter * nested if argc() == 0 && filereadable($HOME . "/.vim/Session.vim") |
+      "\ execute "source " . $HOME . "/.vim/Session.vim"
 
 "autocmd BufReadPost *.*.* call MultiExtensionFiletype()
 
