@@ -8,7 +8,7 @@ set autoindent          " copy indent level to next line
 "set smartindent         " smart autoindent on new line
 set shiftwidth=2        " numbers of spaces to (auto)indent
 set backspace=2         " compatibility for delimitMate expand CRs
-set textwidth=72	" max width of inserted text
+"set textwidth=72	" max width of inserted text
 "set encoding=utf-8	" character encoding inside Vim
 
 " ### Set term for arrow key compatibility
@@ -74,12 +74,12 @@ nnoremap <leader>cd :cd %:p:h<CR>:pwd<CR>
 set pastetoggle=<F2>
 
 " CloseTag
-au FileType html,eruby,mako let b:closetag_html_style=1
-au FileType html,xhtml,xml,eruby,mako source ~/.vim/bundle/closetag.vim/plugin/closetag.vim
+"au FileType html,eruby,mako let b:closetag_html_style=1
+"au FileType html,xhtml,xml,eruby,mako source ~/.vim/bundle/closetag.vim/plugin/closetag.vim
 
 " DelimitMate
 imap <leader>m <Plug>delimitMateS-Tab
-au FileType ruby let b:delimitMate_quotes = "\" ' ` |"
+  au FileType ruby\|eruby let b:delimitMate_quotes = "\" ' ` |"
 let delimitMate_expand_space = 1
 let delimitMate_expand_cr = 1
 
@@ -99,7 +99,7 @@ map <leader>u :source ~/.vimrc<cr>
 nmap <silent> <C-N> :silent noh<CR>
 
 " UltiSnips
-let g:UltiSnipsSnippetsDir="~/.vim/bundle/UltiSnips/UltiSnips"
+"let g:UltiSnipsSnippetsDir="~/.vim/bundle/UltiSnips/UltiSnips"
 
 
 " set nobackup
@@ -117,25 +117,62 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 
 " My Bundles here:
-Bundle 'closetag.vim'
+" insert a closing HTML tag
+"Bundle 'closetag.vim'
+
+" tab completion helper
 Bundle 'ervandew/supertab'
-Bundle 'matchit.zip'
+
+" improved % matching
+"Bundle 'matchit.zip'
+
+" :MRU displays most recently used buffer list
 Bundle 'mru.vim'
+
+" mappings for HTML, XML, eRuby, PHP, ASP, JSP
 Bundle 'tpope/vim-ragtag'
+
+" Matchit for ruby mode
 Bundle 'ruby-matchit'
+
+" tree view file explorer, mapped to <F3>
 Bundle 'scrooloose/nerdtree'
+
+" code commenting
 Bundle 'scrooloose/nerdcommenter'
+
+" adds end statement for code structures
 Bundle 'tpope/vim-endwise'
+
+" adds Vim support for RoR
 Bundle 'tpope/vim-rails'
+
+" provides mappings to delete, change and add parens, brackets, quotes,
+" etc.
 Bundle 'tpope/vim-surround'
+
+" ruby compile and edit support for Vim
+" CTRL-X CTRL-O after dot op to pop up list of methods
 Bundle 'vim-ruby/vim-ruby'
+
+" Command-T file browser
 Bundle 'git://git.wincent.com/command-t.git'
+
+" extended session management (:mksession on steroids) 
 Bundle 'xolox/vim-session'
 
+" auto-close quotes, parens, brackets, etc.
 Bundle 'Raimondi/delimitMate'
+
+" tail contents of a file in real time
+" :Tail <filename>
+" :pclose to exit
 Bundle 'TailMinusF'
-Bundle 'Puppet-Syntax-Highlighting'
-Bundle 'Tabular'
+
+" text filtering and alignment
+Bundle 'godlygeek/tabular'
+
+" vim support for puppet 
 Bundle 'rodjek/vim-puppet'
 
 "Load UltiSnips after Supertabs
