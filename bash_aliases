@@ -21,3 +21,10 @@ alias gitc="git config -l"
 alias gitd="git diff $@"
 alias gitl='git log --oneline --graph'
 alias gits='git status'
+alias pwp="pwd -P"
+# vagrant
+alias vup="vagrant up --no-provision"
+alias vha="vagrant halt"
+alias vsu="vagrant suspend"
+alias vrs="vagrant resume"
+alias vre="vagrant reload"
